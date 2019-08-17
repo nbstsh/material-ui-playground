@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
+
+// pick a date util library
+import MomentUtils from '@date-io/moment';
+import QuickStart from './components/quick-start/quick-start.component';
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<MuiPickersUtilsProvider utils={MomentUtils}>
+			<div className="App">
+				<QuickStart />
+			</div>
+		</MuiPickersUtilsProvider>
+	);
 }
 
 export default App;
